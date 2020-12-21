@@ -2,7 +2,7 @@ import React from "react";
 
 class Input extends React.Component {
 
-    state = { name : "", email : "", phone : ""}
+    state = { name : "", description : ""}
 
     render() {
         return (
@@ -10,7 +10,7 @@ class Input extends React.Component {
             <h2>New entry</h2>
             <form className="ui form">
               <div className="field">
-                <label>Name:</label>
+                <label>Product name:</label>
                 <input
                   type="text"
                   onChange={this.onNameChange}
@@ -18,26 +18,19 @@ class Input extends React.Component {
                 ></input>
               </div>
               <div className="field">
-                <label>Email address:</label>
-                <input
-                  type="text"
-                  onChange={this.onEmailChange}
-                  value={this.state.email}
-                ></input>
+                <label>Product description:</label>
+                <textarea
+                    onChange={this.onDescriptionChange}
+                    value = {this.state.description}
+                ></textarea>
               </div>
-              <div className="field">
-                <label>Phone number:</label>
-                <input
-                  type="text"
-                  onChange={this.onPhoneChange}
-                  value={this.state.phone}
-                ></input>
-              </div>
+              
               <button className="ui button" type="submit">
                 Create
               </button>
             </form>
-            <p>{this.state.email}</p>
+
+            <p>{this.state.description}</p>
           </div>
         );
     }
@@ -46,8 +39,8 @@ class Input extends React.Component {
         this.setState({ name: event.target.value });
     };
     
-    onEmailChange = event => {
-        this.setState({ email: event.target.value });
+    onDescriptionChange = event => {
+        this.setState({ description: event.target.value });
     };
     
     onPhoneChange = event => {
