@@ -42,10 +42,5 @@ class Input extends React.Component {
     onDescriptionChange = event => {
         this.setState({ description: event.target.value });
     };
-    
-    onPhoneChange = event => {
-        this.setState({ phone: event.target.value });
-    };
-    
 }
 export default Input;
