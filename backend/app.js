@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 33338;
+const port = 33337;
 
 app.use(express.json());
 app.use(function(req, res, next){
@@ -21,7 +21,7 @@ products.set(4, {name: 'Samsung Galaxy S21', description: 'Telefon'});
 products.set(5, {name: 'NZXT H510', description: 'Kuciste'});
 
 //Transformise mapu u JSON format
-function productsToJSON() {
+function toJSON() {
     let data = {}
     for ([key, value] of products) {
         data[key] = value
@@ -36,12 +36,12 @@ app.delete('/admin/proizvodi', (req, res) => {
     products.delete(key);
 
     
-    data = productsToJSON();
+    data = toJSON();
     res.send(data);
 });
 
 app.get('/admin/proizvodi', (req, res) => {
-    res.send(productsToJSON());
+    res.send(toJSON());
 });
 
 app.post('/admin/unos-novog-proizvoda', (req, res) => {
@@ -53,7 +53,7 @@ app.post('/admin/unos-novog-proizvoda', (req, res) => {
     
     // Dodavanje proizvoda u mapu
     products.set(products.size, {name: name, description: description});
-    res.status(200).send(productsToJSON());
+    res.status(200).send(toJSON());
     console.log("Bio sam ovde");
 });
 

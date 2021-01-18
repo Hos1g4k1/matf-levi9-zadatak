@@ -31,7 +31,7 @@ export default class ItemAdd extends Component {
       if (this.state.name === "" || this.state.description === "") {
         console.log("Unos ne bi smeo biti prazan!")
       } else {
-        await fetch('http://localhost:33338/admin/unos-novog-proizvoda', {
+        await fetch('http://localhost:33337/admin/unos-novog-proizvoda', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

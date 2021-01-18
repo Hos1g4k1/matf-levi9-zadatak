@@ -18,7 +18,7 @@ export default class ItemList extends Component {
 
   // Ispisivanje svih proizvoda iz mape
   renderCallback() {
-    fetch('http://localhost:33338/admin/proizvodi')
+    fetch('http://localhost:33337/admin/proizvodi')
     .then((res) => res.json())
     .then((res) => {
       let tableRows = []
@@ -41,7 +41,7 @@ export default class ItemList extends Component {
   // Prosledi se id proizvoda i nakon toga
   // Se ispisu preostali proizvodi
   deleteCallback = async(id) => {
-    const res = await fetch('http://localhost:33338/admin/proizvodi', {
+    const res = await fetch('http://localhost:33337/admin/proizvodi', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ export default class ItemList extends Component {
                   <td>{row.name}</td>
                   <td>{row.description}</td>
                   <td>
-                    <button type="submit" onClick={() => this.deleteCallback(row.id)}>Delete</button>
+                    <button onClick={() => this.deleteCallback(row.id)}>Delete</button>
                   </td>
                 </tr>
               ))
