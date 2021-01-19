@@ -67,7 +67,7 @@ export default class ItemAdd extends Component {
               ></textarea>
             </div>
             
-            <button onClick = {this.sendCallback}>
+            <button className="button" onClick = {this.sendCallback}>
               Add product
             </button>
             <p>{this.state.description}</p>

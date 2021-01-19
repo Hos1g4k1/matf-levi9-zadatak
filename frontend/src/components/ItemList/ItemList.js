@@ -43,9 +43,7 @@ export default class ItemList extends Component {
   deleteCallback = async(id) => {
     const res = await fetch('http://localhost:33337/admin/proizvodi', {
       method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: {'Content-Type': 'application/json',},
       body: JSON.stringify({id: id}),
     });
 
@@ -54,11 +52,7 @@ export default class ItemList extends Component {
     .then((res) => {
         let tableRows = []
         for (const [key, value] of Object.entries(res)) {
-            const item = {
-              id: parseInt(key),
-              name: value.name,
-              description: value.description
-            };
+            const item = {id: parseInt(key), name: value.name, description: value.description};
 
             tableRows.push(item);
         }

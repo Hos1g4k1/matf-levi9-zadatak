@@ -13,7 +13,7 @@ app.use(function(req, res, next){
 });
 
 products = new Map();
-products.set(0, {name: 'RTX 3090', description: 'Graficka kartica'});
+products.set(0, {name: 'RTX 3090 Strix', description: 'Graficka kartica'});
 products.set(1, {name: 'Asus ROG B450', description: 'Maticna ploca'});
 products.set(2, {name: 'Ryzen 7 3700x', description: 'Procesor'});
 products.set(3, {name: 'CoolerMaster 750M', description: 'Napajanje'});
